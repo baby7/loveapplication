@@ -1,0 +1,136 @@
+<div class="grid_pattern_layout">
+    <!-- 2x2卡片 -->
+    <div class="big_docker" if="{{mini}}" >
+    <!-- 标题容器 -->
+        <div class="mini_title_container">
+            <div class="core">
+                <text class="mini_title" style="color: blue"> {{info.toDay}} </text>
+                <text class="mini_title" style="color: green"> {{info.week}} </text>
+            </div>
+            <div class="core">
+            </div>
+            <div class="core">
+                <text class="mini_title">我们在一起的</text>
+                <text class="mini_title" style="color: red"> {{info.days}} </text>
+                <text class="mini_title">天</text>
+            </div>
+        </div>
+        <!-- 桃心 -->
+        <div class="heart_container">
+            <div class="love">
+                <div class="mini_love1" style="background-color: {{ info.colorList[0] }}"></div>
+                <div class="mini_love2" style="background-color: {{ info.colorList[1] }}"></div>
+                <div class="mini_love3" style="background-color: {{ info.colorList[2] }}"></div>
+                <div class="mini_love4" style="background-color: {{ info.colorList[3] }}"></div>
+                <div class="mini_love5" style="background-color: {{ info.colorList[4] }}"></div>
+                <div class="mini_love6" style="background-color: {{ info.colorList[5] }}"></div>
+                <div class="mini_love7" style="background-color: {{ info.colorList[6] }}"></div>
+            </div>
+        </div>
+        <!-- 纪念日信息 -->
+        <div class="mini_title_container">
+            <div class="core">
+                <text class="mini_title" style="color: orangered" > 东方情人节 </text>
+                <text class="mini_title">就快要到了</text>
+            </div>
+            <div class="core">
+                <text class="mini_title">还有</text>
+                <text class="mini_title" style="color: red" > 2 </text>
+                <text class="mini_title">天</text>
+            </div>
+        </div>
+    </div>
+    <!-- 4x4卡片 -->
+    <div class="big_docker" if="{{big}}" >
+        <list>
+            <list-item for="{{mainList}}">
+            <!-- 标题容器 -->
+                <div class="title_container" if="{{$item.showTitle}}" >
+                    <div class="core">
+                        <text class="title">今天是</text>
+                        <text class="title" style="color: blue"> {{info.toDay}} </text>
+                        <text class="title" style="color: green"> {{info.week}} </text>
+                    </div>
+                    <div class="core">
+                        <text class="title" style="color: orangered"> {{info.lunarCalendar}} </text>
+                    </div>
+                    <div class="core">
+                        <text class="title">是我们在一起的第</text>
+                        <text class="title" style="color: red"> {{info.days}} </text>
+                        <text class="title">天</text>
+                    </div>
+                </div>
+                <div if="{{$item.showHeart}}" >
+                    <!-- 桃心 -->
+                    <div class="heart_container">
+                        <div class="love">
+                            <div class="love1" style="background-color: {{ info.colorList[0] }}"></div>
+                            <div class="love2" style="background-color: {{ info.colorList[1] }}"></div>
+                            <div class="love3" style="background-color: {{ info.colorList[2] }}"></div>
+                            <div class="love4" style="background-color: {{ info.colorList[3] }}"></div>
+                            <div class="love5" style="background-color: {{ info.colorList[4] }}"></div>
+                            <div class="love6" style="background-color: {{ info.colorList[5] }}"></div>
+                            <div class="love7" style="background-color: {{ info.colorList[6] }}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div if="{{$item.showDay}}" >
+                    <!-- 纪念日信息 -->
+                    <div class="title_container">
+                        <div class="core" if="{{info.commemorationDayList[0].today}}">
+                            <text class="title">今天是</text>
+                            <text class="title" style="color: orangered"> {{info.commemorationDayList[0].name}} </text>
+                        </div>
+                        <div class="core" if="{{info.commemorationDayList[0].otherDay}}">
+                            <text class="title" style="color: orangered" > {{info.commemorationDayList[0].name}} </text>
+                            <text class="title">就快要到了，还有</text>
+                            <text class="title" style="color: red" > {{info.commemorationDayList[0].countdown}} </text>
+                            <text class="title">天</text>
+                        </div>
+                    </div>
+                </div>
+                <div if="{{$item.showWeather}}">
+                    <!--天气预报-->
+                    <div class="weather_container">
+                        <div class='weather'>
+                            <text class="title" style="font-size: 18px;color: orangered">{{info.city}}</text>
+                        </div>
+                        <div class='weather'>
+                            <text class="title">{{info.weatherList[0].date}} </text>
+                            <text class="title">{{info.weatherList[0].weather}}</text>
+                            <text class="title">{{info.weatherList[0].temperature}}</text>
+                        </div>
+                        <div class='weather'>
+                            <text class="title">{{info.weatherList[1].date}} </text>
+                            <text class="title">{{info.weatherList[1].weather}}</text>
+                            <text class="title">{{info.weatherList[1].temperature}}</text>
+                        </div>
+                    </div>
+                </div>
+                <div if="{{$item.showInWord}}">
+                    <!--一言-->
+                    <div class="weather_container">
+                        <div class='weather'>
+                            <text class="title" style="font-size: 18px;color: green">一言</text>
+                        </div>
+                        <div>
+                            <text class="title"> {{info.inAWordContent}} </text>
+                        </div>
+                    </div>
+                </div>
+                <div if="{{$item.showNews}}">
+                    <!--慧语简报-->
+                    <div class="weather_container">
+                        <div class='weather'>
+                            <text class="title" style="font-size: 18px;color: blue">进度</text>
+                        </div>
+                        <div class='weather'>
+                            <text class="title">{{info.news.progressBar}}</text>
+                            <text class="title">{{info.news.progressBarValue}}</text>
+                        </div>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+</div>

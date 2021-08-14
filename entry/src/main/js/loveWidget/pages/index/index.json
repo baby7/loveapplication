@@ -1,0 +1,68 @@
+{
+  "data": {
+    "big": true,
+    "mini": false,
+    "mainList": [
+      {
+        "showTitle": true
+      },
+      {
+        "showHeart": true
+      },
+      {
+        "showDay": true
+      },
+      {
+        "showWeather": true
+      },
+      {
+        "showInWord": true
+      },
+      {
+        "showNews": true
+      }
+    ],
+    "info": {
+      "toDay": "2021年08月12日",
+      "week": "星期四",
+      "lunarCalendar": "辛丑牛年 七月初五",
+      "days": "1012",
+      "city": "天津",
+      "colorList": [
+        "red",
+        "#ff4500",
+        "#fb7b5a",
+        "#af52a7",
+        "#ff4500",
+        "green",
+        "blue"
+      ],
+      "commemorationDayList": [
+        {
+          "name": "东方情人节",
+          "countdown": "2",
+          "today": false,
+          "otherDay": true
+        }
+      ],
+      "weatherList": [
+        {
+          "date": "2021-08-12",
+          "weather": "天气：多云",
+          "temperature": "温度：24/30℃"
+        },
+        {
+          "date": "2021-08-12",
+          "weather": "天气：多云",
+          "temperature": "温度：24/30℃"
+        }
+      ],
+      "inAWordContent": "做一个厉害的人：情绪稳定，心态平和，格局要大，眼界要广，能屈能伸。能示弱，但也要学会示强。要善良，但也要有锋芒。能吃亏，但也不能总吃亏。",
+      "news": {
+        "progressBar": "▓▓▓▓▓▓▓▓░░░░░░",
+        "progressBarValue": "2021年，您已经使用了61.70%"
+      }
+    }
+  }
+}
+

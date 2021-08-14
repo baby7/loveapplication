@@ -1,0 +1,42 @@
+apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.ohos.decctest'
+//For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\baby7\\.ohos\\config\\auto_debug_70086000140267770.p12')
+            storePassword '000000185268E4C629BB31644D1CEDF2EC2F1C12559DCFC1427420305BAF203C4E660C0B0518A780'
+            keyAlias = 'debugKey'
+            keyPassword '0000001800D92FFD7C4BC8B0432C660A96389BF2BCD74F9A6E333A0A19E259DB97793C5F6B0EC094'
+            signAlg = 'SHA256withECDSA'
+            profile file('C:\\Users\\baby7\\.ohos\\config\\auto_debug_myapplication_70086000140267770.p7b')
+            certpath file('C:\\Users\\baby7\\.ohos\\config\\auto_debug_70086000140267770.cer')
+        }
+    }
+    compileSdkVersion 5
+    defaultConfig {
+        compatibleSdkVersion 5
+    }
+    showInServiceCenter true
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled false
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testImplementation 'junit:junit:4.13'
+    ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
+    compile group: 'cn.hutool', name: 'hutool-all', version:'5.5.4'
+    compile group: 'org.hothub', name: 'calendarist', version:'1.0.7'
+    compile group: 'org.jsoup', name: 'jsoup', version:'1.13.1'
+}
+decc {
+    supportType = ['html', 'xml']
+}
