@@ -27,4 +27,10 @@
 
 然后桃心的话是七个div，然后横着排起来，设置下长度和上方距离，随机颜色的话是用java端返回的颜色列表给七个div的背景色进行着色
 
-还有就是纪念日的计算和获取信息的API，天气查询的是聚合数据的api：http://apis.juhe.cn，一言是用的https://wufazhuce.com，最后的进度条用的是https://news.topurl.cn
+还有就是纪念日的计算和获取信息的API
+
+天气查询的是聚合数据的api：http://apis.juhe.cn
+
+一言是用的https://wufazhuce.com
+
+最后的进度条用的是https://news.topurl.cn
